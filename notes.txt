@@ -1,2 +1,2 @@
 # Attempt a quick crack on all pcap files 
-for x in `ls *.pcap`; do aircrack-ng -w /opt/wordlists/Top304Thousand-probable-v2.txt $x > temp_out.txt && grep -oP -m1 'KEY FOUND.*\[(.*)\]' temp_out.txt > ${x}.cracked && rm temp_out.txt; done && find . -type f -name '*.cracked' -size -30c -exec rm {} \;
+for x in `ls *.pcap`; do aircrack-ng -w /opt/wordlists/Top304Thousand-probable-v2.txt $x > temp_out.txt && grep -oP -m1 'KEY FOUND.*\[(.*)\]' temp_out.txt > ${x}.cracked && rm temp_out.txt; done && find . -type f -name '*.cracked' -size -10c -exec rm {} \;
